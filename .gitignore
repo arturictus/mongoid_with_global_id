@@ -7,3 +7,4 @@
 /pkg/
 /spec/reports/
 /tmp/
+mongoid_with_global_id-*.gem
