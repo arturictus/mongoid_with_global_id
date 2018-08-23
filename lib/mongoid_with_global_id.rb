@@ -1,11 +1,13 @@
 require "mongoid_with_global_id/version"
 
-module MongoidWithGlobalId
-  # Your code goes here...
+module MongoidWithGlobalId; end
+
+if defined? Mongoid::Relations::Proxy
+  class Mongoid::Relations::Proxy
+    include GlobalID::Identification
+  end
 end
-class Mongoid::Relations::Proxy
-  include GlobalID::Identification
-end
+
 module Mongoid::Document
   include GlobalID::Identification
 end
